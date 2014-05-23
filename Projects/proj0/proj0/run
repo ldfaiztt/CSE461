@@ -1,0 +1,17 @@
+#!/bin/sh
+
+javac UDPServer.java UDPClient.java
+
+if [ $# -lt 1 -a $# -gt 2 ]; then
+    echo "Server Usage: run <Port Number>"
+    echo "Client Usage: run <Host Name> <Port Number>"
+    exit 1
+fi
+
+if [ $# -eq 1 -a $1 = "clean" ]; then
+    rm *.class
+elif [ $# -eq 1 ]; then
+    java UDPServer $1
+else
+    java UDPClient $1 $2
+fi

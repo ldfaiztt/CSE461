@@ -1,0 +1,10 @@
+#!/bin/sh
+
+javac HTTPProxy.java
+
+if [ $# -ne 1 ]; then
+    echo "HTTPProxy Usage: run <port number>"
+    exit 1
+fi
+
+java HTTPProxy $1

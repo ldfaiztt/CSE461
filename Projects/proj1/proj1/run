@@ -1,0 +1,10 @@
+#!/bin/sh
+
+javac RegistrationAgent.java
+
+if [ $# -ne 2 ]; then
+    echo "Client Usage: run <registration service host name> <service port>"
+    exit 1
+fi
+
+java RegistrationAgent $1 $2
